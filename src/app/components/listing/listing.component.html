@@ -1,0 +1,95 @@
+<!--Include navigation bar-->
+<app-navigation></app-navigation>
+
+<!--Loader-->
+<div class="loaderBg" *ngIf="!projects && isEmpty === false">
+  <div class="container-fluid loader">
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    <h3 class="pt-5 text-center text-light">Chargement des projets en cours...</h3>
+  </div>
+</div>
+
+<!--After loading-->
+<div class="mt-5 mb-5" *ngIf="projects && isEmpty === false">
+  <div class="container">
+    <div class="row mb-3">
+      <div class="d-flex justify-content-center">
+        <div class="col-md-10 headerProjects">
+          <div class="row">
+            <div class="d-flex justify-content-between">
+              <div class="col-md-3">
+                <h5>Liste des projets</h5>
+              </div>
+              <div class="col-md-2">
+                <div [routerLink]="['/project',]" class="buttonCreate">
+                  <p>CREER UN PROJET</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="d-flex justify-content-center">
+        <div class="col-md-10">
+          <div class="test" *ngFor="let project of projects">
+            <div class="col-md-12 longCard">
+              <div [routerLink]="['/selection', project.id]" class="row longCardLink">
+                <div class="d-flex justify-content-between">
+                  <div class="col-md-1 d-flex justify-content-center">
+                    <div class="iconBg">
+                      <fa-icon class="key" *ngIf="project.is_private == false" [icon]="faLock"></fa-icon>
+                      <fa-icon class="key" *ngIf="project.is_private == true" [icon]="faKey"></fa-icon>
+                    </div>
+                  </div>
+                  <div class="col-md-11 content">
+                    <p class="title">{{ project.name }}</p>
+                    <p class="description">{{ project.description }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <hr>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!--Empty data-->
+<div class="mt-5 mb-5" *ngIf="isEmpty === true">
+  <div class="container">
+    <div class="row mb-3">
+      <div class="d-flex justify-content-center">
+        <div class="col-md-10 headerProjects">
+          <div class="row">
+            <div class="d-flex justify-content-between">
+              <div class="col-md-4">
+                <h5>Vous n'avez pas encore de projet !</h5>
+              </div>
+              <div class="col-md-2">
+                <div [routerLink]="['/project',]" class="buttonCreate">
+                  <p>CREER UN PROJET</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="d-flex justify-content-center">
+        <div class="col-md-10 text-center divIcon">
+          <fa-icon class="sadIcon" [icon]="faSad"></fa-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

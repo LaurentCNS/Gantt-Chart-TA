@@ -1,0 +1,96 @@
+
+h3{
+  color: #ec4135;
+}
+
+p{
+  color: #737373;
+}
+
+.titleForm{
+  font-size: 1.2rem;
+  color: #737373;
+  margin-bottom: .5rem;
+}
+
+.btnRadio{
+  width: 400px;
+}
+
+.btn-outline-primary {
+  color: #4a4a4a;
+  background-color: #f0f0f3;
+  border-color: #f0f0f3;
+}
+
+.btn-check:checked + .btn-outline-primary  {
+  background-color: #ec4135;
+  border-color: #ec4135;
+}
+
+.btn-outline-primary:hover {
+  color: #fff;
+  background-color: #d4291a;
+  border-color: #cd3a2f;
+}
+
+.btnBack{
+  width: 200px;
+  background-color: #d7dde8;
+  border-color: #d7dde8;
+  color: #4a4a4a;
+}
+
+.btnBack:hover{
+  background-color: #ec4135;
+  border-color: #ec4135;
+  color: #fff;
+}
+
+.btnBack:active{
+  background-color: #d4291a;
+  border-color: #d4291a;
+  color: #fff;
+}
+
+.btnCreate{
+  width: 600px;
+  background-color: #bee6be;
+  border-color: #bee6be;
+  color: #333333;
+}
+
+.btnCreate:hover{
+  background-color: #2d8b37;
+  border-color: #2d8b37;
+  color: #fff;
+}
+
+.btnCreate:active{
+  background-color: #49a557;
+  border-color: #49a557;
+  color: #fff;
+}
+
+.trashAndFinish{
+  color : #4a4a4a;
+  font-size: 1.2rem;
+}
+
+.trashAndFinish:hover{
+  color : #ec4135;
+  cursor: pointer;
+}
+
+.dateClosed{
+  background-color: #bee6be;
+  border-color: #bee6be;
+  color: #333333;
+}
+
+.dateClosed:hover{
+  background-color: #2d8b37;
+  border-color: #2d8b37;
+  color: #fff;
+}
+

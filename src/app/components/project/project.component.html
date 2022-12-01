@@ -1,0 +1,36 @@
+<!--Include navigation bar-->
+<app-navigation></app-navigation>
+
+<!--form-->
+<div class="container mt-3">
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-12 mt-5 text-center">
+      <div class="d-flex justify-content-center">
+        <h3>Nouveau projet</h3>
+      </div>
+      <p>Garder un flux de travail constant sur les tâches indépendantes</p>
+    </div>
+    <form #projectValid="ngForm" (submit)="addProject()" class="col-md-8 col-md-offset-3 mt-5">
+      <div class="form-group">
+        <label class="titleForm" for="name">Détails du nouveau projet</label>
+        <input [(ngModel)]="formProject.name" class="form-control" type="text" placeholder="Nom du projet (requis)" name="name" id="name" required>
+      </div>
+      <div class="form-group">
+        <label for="description"></label>
+        <textarea [(ngModel)]="formProject.description" class="form-control" placeholder="Description du projet (requis)" name="description" id="description" rows="5" required></textarea>
+      </div>
+      <div class="btn-group mt-4 mb-5 d-flex justify-content-center" role="group" aria-label="Basic radio toggle button group">
+        <input [value]="true" type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="on" checked>
+        <label class="btn btn-outline-primary btnRadio" for="btnradio1">PROJET PRIVE</label>
+        <input [value]="false" type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+        <label class="btn btn-outline-primary btnRadio" for="btnradio3">PROJET PUBLIC</label>
+      </div>
+      <div class="mt-5 d-flex justify-content-center">
+      <button [routerLink]="['/listing']" type="button" class="btn btn-primary btn-lg btnBack me-5">RETOUR</button>
+      <button [disabled]="!projectValid.valid" type="submit" class="btn btn-primary btn-lg btnCreate ">CREER UN PROJET</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+

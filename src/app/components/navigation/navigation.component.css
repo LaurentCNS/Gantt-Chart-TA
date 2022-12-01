@@ -1,0 +1,104 @@
+.container-fluid {
+  padding: 0;
+}
+
+.navigation{
+  width: 100%;
+  height: 60px;
+  background-color: #e1e2e8;
+}
+
+.logout{
+  cursor: pointer;
+  color: #ec4135;
+}
+
+.choice{
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.choice:hover{
+  color: #ec4135;
+}
+
+.round{
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  background-color: #353535;
+  color: white;
+  text-align: center;
+  line-height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+  margin-top: 6px;
+}
+
+.round:hover{
+color: #ec4135;
+}
+
+.menuLeft{
+  font-size: 15px;
+  color: #333333;
+}
+
+.user{
+  font-size: 25px;
+  color: #353535;
+}
+
+.userCard{
+  margin-top: 12px;
+  margin-right: 20px;
+  color: #353535;
+  cursor: pointer;
+}
+
+.userCard:hover{
+  color: #ec4135;
+}
+
+.userArrow{
+  margin-top: 8px;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+.choice{
+  height: 30px;
+  margin-top: 15px;
+  background-color: #ebeef3;
+  border: 1px solid #b3b3b3;
+}
+
+.choice:hover{
+  border-color: #ec4135;
+}
+
+.choiceContent{
+  margin-top: 3px;
+}
+
+.logosRight{
+  font-size: 25px;
+  cursor: pointer;
+  margin-left: 11px !important;
+  margin-top: 13px;
+  transition: 0.2s;
+  color: #333333;
+}
+
+.logosRight:hover{
+  color: #ec4135;
+}
+
+.separation{
+  height: 40px;
+  margin-top: 10px;
+  margin-left: 15px;
+  border-left: 1px solid #bfc0c0;
+}
+
+

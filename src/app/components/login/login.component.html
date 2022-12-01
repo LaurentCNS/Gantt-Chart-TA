@@ -1,0 +1,55 @@
+<div class="bodyLogin">
+  <div class="title">
+    <div class="titleContent text-center">
+      <img src="/assets/taiga_white.png" alt="Logo" width="110" height="110" class="d-inline-block align-text-top">
+      <h5 class="mt-3">GANTT CHART TA</h5>
+      <p>Workflow diagram for Taiga</p>
+    </div>
+  </div>
+  <div class="form" *ngIf="isLogged === false">
+    <div class="form-container">
+      <div class="icon" *ngIf="!apiError">
+        <fa-icon [icon]="faUser"></fa-icon>
+        <p> Veuillez renseigner vos identifiants Taiga pour continuer</p>
+      </div>
+      <div class="icon" *ngIf="apiError">
+        <fa-icon [icon]="faStop"></fa-icon>
+        <p>Identifiant ou mot de passe incorrect</p>
+      </div>
+      <form [formGroup]=loginForm>
+        <mat-form-field appearance="fill">
+          <mat-label>Nom d'utilisateur</mat-label>
+          <input matInput formControlName="username">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Mot de passe</mat-label>
+          <input matInput formControlName="password" [type]="hide ? 'password' : 'text'">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                  [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+        <div class="form-button-row">
+          <button [disabled]="!loginForm.valid" (click)="login()" mat-raised-button color="warn">Valider</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="form" *ngIf="isLogged === true">
+    <div class="form-container">
+      <div class="icon">
+        <fa-icon [icon]="faUser"></fa-icon>
+        <p>Vous êtes actuellement connecté !</p>
+        <p class="text-bg-secondary">La session expire dans {{ timeSessionExpired }}</p>
+      </div>
+      <div class="form-button-row">
+        <button (click)="goListing()" mat-raised-button color="warn">Retourner au menu</button>
+        <button (click)="logout()" mat-raised-button color="warn">Se déconnecter</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

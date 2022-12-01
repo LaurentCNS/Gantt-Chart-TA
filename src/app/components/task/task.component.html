@@ -1,0 +1,44 @@
+<!--Include navigation bar-->
+<app-navigation></app-navigation>
+
+<!--Content-->
+<div class="container mt-3">
+  <div class="row d-flex justify-content-center form">
+    <div class="col-md-12 mt-5 text-center">
+      <div class="d-flex justify-content-center">
+        <fa-icon [icon]="faTasks"
+                 class="calendar d-inline-block align-text-top me-3"></fa-icon>
+        <h3>Nouvelle tâche utilisateur</h3>
+      </div>
+    </div>
+    <form #projectValid="ngForm" (submit)="addTask()" class="col-md-8 col-md-offset-3 mt-5">
+      <div class="form-group">
+        <label class="titleForm" for="name">Titre de la tâche</label>
+        <input [(ngModel)]="formUserStory.subject" class="form-control" type="text"
+               placeholder="Sujet (requis)" name="name" id="name" required>
+      </div>
+      <div class="form-group mt-4">
+        <label class="titleForm" for="startDate">Date de début</label>
+        <input [(ngModel)]="formUserStory.start_date_task" class="form-control" type="text" onfocus="(this.type='date')"
+               placeholder="Indiquer une date de début" name="startDate" id="startDate">
+      </div>
+      <div class="form-group mt-4">
+        <label class="titleForm" for="endDate">Date de fin</label>
+        <input [(ngModel)]="formUserStory.end_date_task" class="form-control" type="text" onfocus="(this.type='date')"
+               placeholder="Indiquer une date de fin" name="startDate" id="endDate">
+      </div>
+      <div class="form-group mt-4">
+        <label class="titleForm" for="description">Description</label>
+        <textarea [(ngModel)]="formUserStory.description" class="form-control" type="text"
+                  placeholder="Ajouter une description pour aider les autres à mieux comprendre ce récit utilisateur" name="description" id="description" rows="5"></textarea>
+      </div>
+      <div class="mt-5 d-flex justify-content-center">
+      </div>
+      <div class="d-flex justify-content-center">
+        <button [routerLink]="['/selection', id]" type="button" class="btn btn-primary btn-lg btnBack me-5">RETOUR</button>
+        <button [disabled]="!projectValid.valid" type="submit" class="btn btn-primary btn-lg btnCreate ">ENREGISTRER
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

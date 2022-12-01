@@ -1,0 +1,31 @@
+<!--Include navigation bar-->
+<app-navigation></app-navigation>
+
+<!-- content -->
+<div class="container">
+    <div class="row">
+      <div class="d-flex justify-content-center">
+        <div class="col-md-3">
+            <div class="cardSelector disabledCard">
+              <img class="logoCard" src="assets/kanban.png" class="card-img-top" alt="...">
+              <h5 class="text-center">Kanban</h5>
+              <p class="text-center">Organiser les tâches de votre projet.</p>
+            </div>
+        </div>
+        <div class="col-md-3">
+          <div [routerLink]="['/task', id]" class="cardSelector">
+            <img class="logoCard" src="assets/task.png" class="card-img-top" alt="...">
+            <h5 class="text-center">Tâches</h5>
+            <p class="text-center">Créer des tâches pour votre projet.</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div [routerLink]="['/diagram', id]" class="cardSelector">
+            <img class="logoCard" src="assets/gantt.png" class="card-img-top" alt="...">
+            <h5 class="text-center">Gantt</h5>
+            <p class="text-center">Diagramme de votre projet.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

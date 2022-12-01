@@ -1,0 +1,95 @@
+.bodyLogin{
+  height: 100vh;
+  background-color: #212529;
+  font-family: 'Ubuntu-Medium', sans-serif;
+}
+
+.title{
+  height: 280px;
+  background-color: #212529;
+  color: #fff;
+}
+
+.titleContent{
+  padding-top: 50px;
+}
+
+h5{
+  line-height: 2rem;
+  font-size: 1.8rem
+}
+
+.form{
+  width: 500px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  background-color: #ffffff;
+}
+
+.form p{
+  text-align: center;
+  margin-bottom: 50px;
+  color: #ec4135;
+  font-size: 13px;
+}
+
+.form .error{
+  text-decoration: underline;
+}
+
+.form-container .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+
+.form-right-align {
+  text-align: right;
+}
+
+input.form-right-align::-webkit-outer-spin-button,
+input.form-right-align::-webkit-inner-spin-button {
+  display: none;
+}
+
+input.form-right-align {
+  -moz-appearance: textfield;
+}
+
+.form-label {
+  display: table-cell;
+  font-size: 14px;
+  margin-left: 8px;
+  min-width: 120px;
+}
+
+.form-button-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 35px
+}
+
+.form-button-row .mat-button-base {
+  margin: 20px 8px 8px 0;
+}
+
+.form-flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.form-button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+}
+
+.icon{
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+fa-icon{
+ font-size: 30px;
+}

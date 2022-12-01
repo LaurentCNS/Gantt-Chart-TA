@@ -1,0 +1,55 @@
+<div class="container-fluid">
+  <div class="navigation" *ngIf="user">
+    <div class="row me-0">
+      <div class="d-flex justify-content-between">
+        <div class="col-lg-6">
+          <div class="row">
+            <div class="d-flex menuLeft">
+              <div class=" ms-4 me-1 row choice" [routerLink]="'/listing'">
+                <div class="choiceContent d-flex">
+                  <fa-icon class="ms-2" [icon]="faFolder"></fa-icon>
+                  <p class="ms-2 me-2">Projets</p>
+                </div>
+              </div>
+              <div *ngIf="isProjectPage === true" class=" ms-4 me-1 row choice" (click)="returnBack()">
+                <div class="choiceContent d-flex">
+                  <fa-icon class="ms-2" [icon]="faArrowLeft"></fa-icon>
+                  <p class="ms-2 me-2">Retour</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="d-flex justify-content-end">
+            <fa-icon *ngIf="isFullScreen === false" class="ms-3 me-3 logosRight" (click)="fullScreenOn()"
+                     [icon]="faExpand"></fa-icon>
+            <fa-icon *ngIf="isFullScreen === true" class="ms-3 me-3 logosRight" (click)="fullScreenOff()"
+                     [icon]="faMinimize"></fa-icon>
+            <div class="separation"></div>
+            <div class="userCard d-flex" mat-icon-button [matMenuTriggerFor]="menu">
+              <fa-icon class="ms-3 me-2 user" [icon]="faUserCircle"></fa-icon>
+              <p class="userArrow">▼</p>
+            </div>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item disabled>
+                <mat-icon>portrait</mat-icon>
+                <span>{{user.full_name}}</span>
+              </button>
+              <button mat-menu-item disabled>
+                <mat-icon>email</mat-icon>
+                <span>{{user.email}}</span>
+              </button>
+              <button mat-menu-item (click)="logout()">
+                <mat-icon>exit_to_app</mat-icon>
+                <span>Se déconnecter</span>
+              </button>
+            </mat-menu>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="navigation" *ngIf="!user">
+  </div>
+</div>
